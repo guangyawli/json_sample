@@ -16,11 +16,15 @@ str_data = '{ "name": "李大朋", "age": 20, "weight": 70}'
 
 
 def print_hi(name):
+    # 讀取 JSON 字串
     p = json.loads(str_data)
+    print("json.loads 結果：")
     print(type(p))
     print(p)
 
+    # 輸出 JSON 字串
     q = json.dumps(dict_data)
+    print("\n json.dumps 結果：")
     print(type(q))
     print(eval(q))
 
@@ -30,6 +34,7 @@ def print_hi(name):
 
     # 讀取 JSON 檔案
     with open("output.json", "r", encoding='UTF-8') as g:
+        print("\n 讀取 json檔案：")
         h = json.load(g)
         print(type(h))
         print('名字：'+h['name'])
